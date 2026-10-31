@@ -1,0 +1,3 @@
+* text=auto eol=lf
+*.gz binary
+shici-studio/assets/**/*.json linguist-generated=true

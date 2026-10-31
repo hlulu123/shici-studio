@@ -1,0 +1,27 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Regression tests
+        run: python tools/test_meter.py
+      - name: CLI smoke test
+        working-directory: shici-studio
+        run: |
+          python scripts/meter.py check "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。"
+          python scripts/meter.py cipai 浣溪沙
+          python scripts/meter.py lookup 看思白
+          python scripts/dupcheck.py --title 静夜思

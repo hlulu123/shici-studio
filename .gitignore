@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 打包产物：.skill 通过 Releases 发布，不进仓库
+*.skill
+dist/
+
+# skill-creator 评测工作区与本地配置
+*-workspace/
+.claude/
+
+# 构建数据时下载的原始数据
+downloads/

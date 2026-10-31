@@ -1,0 +1,37 @@
+name: 格律误判
+description: meter.py 把合律的判成不合律，或者漏掉了错误
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        名篇里的古绝、拗律、折腰体，以及词的又一体，按正体校验报错是预期行为。提交前可以先看看 README 的“已知边界”。
+  - type: textarea
+    id: poem
+    attributes:
+      label: 原诗
+      description: 全文，包括标点
+    validations:
+      required: true
+  - type: input
+    id: form
+    attributes:
+      label: 体裁和韵书
+      placeholder: 例如：七律 · 平水韵；词:念奴娇 · 词林正韵
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 命令和输出
+      description: 运行的完整命令和脚本输出
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你认为正确的判断
+      description: 哪个字、哪一句应该怎么判，依据是什么（韵书、词谱出处）
+    validations:
+      required: true

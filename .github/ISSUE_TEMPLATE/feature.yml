@@ -1,0 +1,21 @@
+name: 建议
+description: 加词牌、加风格、改进写作指导或脚本
+labels: [enhancement]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 想要什么
+      description: 例如：支持《六州歌头》；加一个“竹枝词”风格；改诗时多给一个版本
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么
+      description: 现在的做法哪里不够，最好附上一次实际对话或输出
+  - type: textarea
+    id: reference
+    attributes:
+      label: 参考资料
+      description: 词谱、例作、出处等
